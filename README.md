@@ -1,1 +1,1 @@
-# 12week-group-project
+# MixTrail-group-project
