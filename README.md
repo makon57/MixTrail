@@ -1,1 +1,1 @@
-# MixTrail-group-project
+# MixTrail
