@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('TrailLists', {
+    return queryInterface.createTable('Joins', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -13,9 +13,9 @@ module.exports = {
        references: { model: "Trails" },
         type: Sequelize.INTEGER
       },
-      trailShelfId: {
+      trailListId: {
       allowNull: false,
-      references: { model: "TrailShelves" },
+      references: { model: "TrailLists" },
         type: Sequelize.INTEGER
       },
       hasVisited: {
@@ -35,6 +35,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('TrailLists');
+    return queryInterface.dropTable('Joins');
   }
 };

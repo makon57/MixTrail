@@ -1,14 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const TrailList = sequelize.define('TrailList', {
-    trailId: DataTypes.INTEGER,
-    trailShelfId: DataTypes.INTEGER,
-    hasVisited: DataTypes.BOOLEAN,
-    wantToVisit: DataTypes.BOOLEAN
+    name: DataTypes.STRING,
+    userId: DataTypes.INTEGER
   }, {});
   TrailList.associate = function(models) {
-    TrailList.belongsTo(models.TrailShelf, {foreignKey: 'trailShelfId'})
-    TrailList.hasMany(models.Trail, {foreignKey:'trailId'})
+    TrailList.belongsTo(models.User, {foreignKey: 'userId'})
   };
   return TrailList;
 };
