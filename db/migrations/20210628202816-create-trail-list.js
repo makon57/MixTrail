@@ -9,9 +9,14 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       trailId: {
+       allowNull: false,
+       references: { model: "Trails" },
         type: Sequelize.INTEGER
       },
       trailShelfId: {
+      allowNull: false,
+
+      references: { model: "TrailShelves" },
         type: Sequelize.INTEGER
       },
       hasVisited: {
