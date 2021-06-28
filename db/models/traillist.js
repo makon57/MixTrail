@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     wantToVisit: DataTypes.BOOLEAN
   }, {});
   TrailList.associate = function(models) {
-    // associations can be defined here
+    TrailList.belongsTo(models.TrailShelf, {foreignKey: 'trailShelfId'})
+    TrailList.hasMany(models.Trail, {foreignKey:'trailId'})
   };
   return TrailList;
 };

@@ -15,7 +15,6 @@ module.exports = {
       },
       trailShelfId: {
       allowNull: false,
-
       references: { model: "TrailShelves" },
         type: Sequelize.INTEGER
       },

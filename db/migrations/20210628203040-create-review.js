@@ -10,14 +10,12 @@ module.exports = {
       },
       trailId: {
         allowNull: false,
-         references: { model: "Trails" },
-
+        references: { model: "Trails" },
         type: Sequelize.INTEGER
       },
       userId: {
         references: { model: "Users" },
         allowNull: false,
-
         type: Sequelize.INTEGER
       },
       rating: {
@@ -26,7 +24,7 @@ module.exports = {
       },
       text: {
         allowNull: false,
-        type: Sequelize.TEXT(255)
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

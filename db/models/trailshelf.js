@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {});
   TrailShelf.associate = function(models) {
-    // associations can be defined here
+    TrailShelf.belongsTo(models.User, {foreignKey: 'userId'})
+    // TrailShelf.hasMany(models.TrailList, {foreignKey: 'trailShelfId'})
   };
   return TrailShelf;
 };
