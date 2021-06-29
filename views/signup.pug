@@ -1,0 +1,20 @@
+extends layout
+
+include utils.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/signup.css")
+
+block content
+    +validationErrorSummary(errors)
+    form(action="/signup" method="post" id="signup" class="signup-user")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        br
+        input(type="text" name="username" placeholder="Username" class="username box-input" )
+        br
+        input(type="email" name="email" placeholder="Email" class="email box-input" )
+        br
+        input(type="password" name="password" placeholder="Password" class="password box-input")
+        br
+        input(type="password" name="confirmPassword" placeholder="Confirm Password" class="password box-input")
+        button(type="submit" class="signup-button") Sign Up
