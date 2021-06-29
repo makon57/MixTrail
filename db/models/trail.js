@@ -6,8 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     state: DataTypes.STRING
   }, {});
   Trail.associate = function(models) {
-    Trail.belongsTo(models.TrailList, {foreignKey: 'trailId'})
     Trail.hasMany(models.Review, {foreignKey: 'trailId'})
+    Trail.belongsToMany(models.TrailList, {through: 'Joins', foreignKey: 'trailId', otherKey: 'trailListId'} )
+
   };
   return Trail;
 };

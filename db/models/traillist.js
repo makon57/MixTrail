@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   TrailList.associate = function(models) {
     TrailList.belongsTo(models.User, {foreignKey: 'userId'})
+    TrailList.belongsToMany(models.Trail, {through: 'Joins', foreignKey: 'trailListId', otherKey: 'trailId'} )
   };
   return TrailList;
 };
