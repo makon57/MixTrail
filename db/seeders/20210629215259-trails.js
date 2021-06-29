@@ -4,8 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     
       return queryInterface.bulkInsert('Trails', [{
-        name: 'John Doe',
-        isBetaMember: false
+        
       }], {});
     
 
