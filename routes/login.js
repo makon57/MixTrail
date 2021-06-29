@@ -2,8 +2,8 @@ const  express = require('express');
 const router = express.Router();
 const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
 const { loginUser } = require('../auth');
+const db = require('../db/models');
 
 /* GET home page. */
 router.get('/', csrfProtection, asyncHandler(async (req, res, next) =>  {
@@ -15,7 +15,7 @@ router.get('/', csrfProtection, asyncHandler(async (req, res, next) =>  {
 }));
 
 const loginValidators = [
-  check('emailAddress')
+  check('email')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a value for Email Address'),
   check('password')
