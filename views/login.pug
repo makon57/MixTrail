@@ -1,10 +1,12 @@
 extends layout
+include utils.pug
 
 append head
 
 
     link(rel="stylesheet" href="/stylesheets/login.css")
 block content
+    +validationErrorSummary(errors)
     form(action="/login" method="post" id="login" class="login-user")
         if !user
             input(type="hidden" name="_csrf" value=csrfToken)

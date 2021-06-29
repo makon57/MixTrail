@@ -4,6 +4,8 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const { check, validationResult } = require('express-validator');
 const { loginUser } = require('../auth');
 const db = require('../db/models');
+const bcrypt = require('bcryptjs');
+
 
 /* GET home page. */
 router.get('/', csrfProtection, asyncHandler(async (req, res, next) =>  {
@@ -35,10 +37,15 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req,res,ne
 
   if (valErrors.isEmpty()) {
     const user = await db.User.findOne({ where: { email } });
-
-    if (user !== null && user.password === password) {
-      loginUser(req, res, user);
-      return res.redirect('/');
+    const userPassword = user.password
+    console.log(password)
+    if (user !== null ) {
+    //  const userPassword = await db.User.findOne({where: {password}}) ;
+        if(userPassword === password) {
+        loginUser(req, res, user);
+       res.redirect('/');
+        }
+      
     }
     errors.push('Login failed')
   } else {
