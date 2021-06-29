@@ -4,10 +4,10 @@ append head
 
 
     link(rel="stylesheet" href="/stylesheets/login.css")
-block content 
+block content
     form(action="/login" method="post" id="login" class="login-user")
         if !user
-            input(type="hidden" name="_csrf" value=token)
+            input(type="hidden" name="_csrf" value=csrfToken)
             br
             input(type="email" name="email" placeholder="Email" class="email box-input" )
             br
@@ -20,4 +20,3 @@ block content
             div.welcome
                 span Welcome, #{user.username}!
                 a(href="/logout" class="logout-button button") LOGOUT
-
