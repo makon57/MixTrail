@@ -71,3 +71,11 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+nav {
+    display: block;
+}
+
+a {
+    color:blue;
+}
