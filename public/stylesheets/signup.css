@@ -76,3 +76,10 @@ p {
 .box-input {
     margin-bottom: 10px;
 }
+
+nav {
+    display: block;
+}
+a {
+    color:blue;
+}

@@ -1,11 +1,11 @@
 h1 {
     text-align: center;
     padding: 10px;
-    font-family: “Open Sans”, Arial, sans-serif;;
+    font-family: "Open Sans", Arial, sans-serif;;
 }
 .email,
 .password {
-    font-family: “Open Sans”, Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     display: flex;
     width: 250px;
     height: 30px;
@@ -42,7 +42,6 @@ input {
     border-radius: 6px;
     width: 250px;
     height: 30px;
-   
 }
 p {
     display: block;
@@ -71,4 +70,10 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+nav {
+    display: block;
+}
+a {
+    color:blue;
 }

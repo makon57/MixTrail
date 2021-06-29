@@ -1,13 +1,12 @@
 extends layout
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
-
 block content
+  nav(id="nav" class="nav-bar")
+    form(action="/" method="post" id="demo" class="demo")
+      button(type="submit" class="logout-btn") LOGOUT
   h1= title
   p Welcome to your Project Skeleton
-  form(action="/" method="post" id="demo" class="demo")
-    button(type="submit" class="logout-button button") LOGOUT
