@@ -1,3 +1,12 @@
 h1 {
     color: #555555;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+.logout-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
 }

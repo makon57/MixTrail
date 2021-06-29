@@ -1,7 +1,8 @@
 h1 {
     text-align: center;
     padding: 10px;
-    font-family: “Open Sans”, Arial, sans-serif;;
+    font-family: “Open Sans”, Arial, sans-serif;
+    font-weight: 700;
 }
 .email,
 .password {
