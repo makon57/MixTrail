@@ -7,8 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = function(models) {
     User.hasMany(models.Review, {foreignKey:'userId'})
-    User.hasMany(models.TrailShelf, {foreignKey: 'userId'})
-    User.belongsToMany(models.TrailList, {through:'TrailShelves', otherKey: 'trailShelfId', foreignKey: 'userId'})
+    User.hasMany(models.TrailList, {foreignKey: 'userId'})
   };
   return User;
 };

@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     wantToVisit: DataTypes.BOOLEAN
   }, {});
   Join.associate = function(models) {
-    Join.belongsTo(models.TraiList, {foreignKey: 'trailListId'})
+    Join.belongsTo(models.TrailList, {foreignKey: 'trailListId'})
     Join.hasMany(models.Trail, {foreignKey:'trailId'})
   };
   return Join;
