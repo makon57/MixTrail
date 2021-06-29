@@ -16,9 +16,11 @@ block content
             input(type="password" name="password" placeholder="Password" class="password box-input")
             br
             button(type="submit" class="login-button") LOGIN
-            br
-            a(href="/demo" class="demo-login") DEMO LOGIN
         else
             div.welcome
                 span Welcome, #{user.username}!
                 a(href="/logout" class="logout-button button") LOGOUT
+
+    form(action="/login/demo" method="post" id="demo" class="demo")
+        input(type="hidden" name="_csrf" value=csrfToken)
+        button(type="submit" class="demo-login") DEMO LOGIN

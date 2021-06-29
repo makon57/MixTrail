@@ -13,7 +13,6 @@ router.get('/', csrfProtection, asyncHandler(async (req, res, next) =>  {
       title: 'login',
       csrfToken: req.csrfToken()
   });
-
 }));
 
 const loginValidators = [
@@ -45,7 +44,7 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req,res,ne
         loginUser(req, res, user);
        res.redirect('/');
         }
-      
+
     }
     errors.push('Login failed')
   } else {
@@ -60,7 +59,20 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req,res,ne
   });
 }));
 
+// Demo Login
+router.get('/demo', csrfProtection, asyncHandler(async (req, res, next) =>  {
+  res.render('login', {
+      title: 'login',
+      csrfToken: req.csrfToken()
+  });
+}));
 
+router.post('/demo', csrfProtection, asyncHandler(async (req,res,next) => {
+  const email = "demo@demo.user";
+  const user = await db.User.findOne({ where: { email } });
+  loginUser(req, res, user);
+  res.redirect('/');
+}));
 
 
 
