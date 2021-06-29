@@ -1,22 +1,25 @@
-    extends layout
-    include utils.pug
-    append head
-    link(rel=“stylesheet” href=“/stylesheets/login.css”)
+extends layout
+
+include utils.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/login.css")
+
 block content
-    div(class=“container”)
-        aside(class=‘color-block’)
-        p Discover the world’s best hikes!
-    div(class=“form-container”)
-        +validationErrorSummary(errors)
-            form(action=“/login” method=“post” id=“login” class=“login-form”)
-            input(type=“hidden” name=“_csrf” value=csrfToken)
-            br
-            h1 Sign into MixTrail
-            input(type=“email” name=“email” placeholder=“Email” class=“email” )
+    div(class="container")
+        aside(class="color-block")
+            p Discover the world’s best hikes!
+        div(class="form-container")
+            +validationErrorSummary(errors)
+            form(action="/login" method="post" id="login" class="login-form")
+                input(type="hidden" name="_csrf" value=csrfToken)
                 br
-                input(type=“password” name=“password” placeholder=“Password” class=“password”)
+                h1 Sign into MixTrail
+                input(type="email" name="email" placeholder="Email" class="email" )
                 br
-                button(type=“submit” class=“login-btn”) LOGIN
-                form(action=“/login/demo” method=“post” id=“demo” class=“demo-form”)
-                input(type=“hidden” name=“_csrf” value=csrfToken)
-                button(type=“submit” class=“demo-btn”) DEMO LOGIN
+                input(type="password" name="password" placeholder="Password" class="password")
+                br
+                button(type="submit" class="login-btn") LOGIN
+            form(action="/login/demo" method="post" id="demo" class="demo-form")
+                input(type="hidden" name="_csrf" value=csrfToken)
+                button(type="submit" class="demo-btn") DEMO LOGIN
