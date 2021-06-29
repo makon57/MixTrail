@@ -17,7 +17,7 @@ router.get('/', csrfProtection, asyncHandler(async (req, res, next) =>  {
 }));
 
 const validationErrors = [
-  check('userame')
+  check('username')
     .exists({ checkFalsy: true })
     .withMessage('Please provide a username.')
     .isLength({ max: 50 })
@@ -30,7 +30,7 @@ const validationErrors = [
     .isEmail()
     .withMessage('Email is not a valid email')
     .custom((value) => {
-      return db.User.findOne({ where: { emailAddress: value } })
+      return db.User.findOne({ where: { email: value } })
         .then((user) => {
           if (user) {
             return Promise.reject('The provided Email Address is already in use by another account');
@@ -72,8 +72,9 @@ router.post('/', csrfProtection, validationErrors, asyncHandler(async(req, res, 
   const valErrors = validationResult(req);
 
   if (valErrors.isEmpty()) {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    user.hashedPassword = hashedPassword;
+    // const hashedPassword = await bcrypt.hash(password, 10);
+    // user.hashedPassword = hashedPassword;
+    user.password = password
     await user.save();
     loginUser(req, res, user);
     res.redirect('/');
