@@ -21,9 +21,17 @@ login-form {
     text-align: center;
     padding: 10px;
 }
+
+label {
+    display: block;
+    margin: auto;
+    padding: 0px 10px 10px 10px;
+}
+
 input {
     display: block;
     margin: auto;
+    border: solid 1px grey;
 }
 .demo-btn {
     display: block;
@@ -31,6 +39,7 @@ input {
     background-color: #1A72E8;
     color: white;
     border-radius: 6px;
+    border: solid 1px white;
     width: 250px;
     height: 30px;
 }
@@ -40,6 +49,7 @@ input {
     background-color: #EA4C89;
     color: white;
     border-radius: 6px;
+    border: solid 1px white;
     width: 250px;
     height: 30px;
 }

@@ -4,8 +4,32 @@ h1 {
     text-align: center;
     padding: 10px;
 }
+
+div.header {
+    display: block;
+    margin: auto;
+}
+
 .logout-btn {
     float: right;
     margin: 10px;
     border-radius: 6px;
+    color: white;
+    background-color: lightblue;
+    border: solid 1px white;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+}
+
+.search {
+    display: block;
+    margin: auto;
+}
+
+.search-bar {
+    border-radius: 30px;
+    width: 70%;
+    height: 45px;
+    font-size: 22px;
 }

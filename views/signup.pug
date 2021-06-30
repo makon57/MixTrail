@@ -13,14 +13,19 @@ block content
                 input(type="hidden" name="_csrf" value=csrfToken)
                 br
                 h1 Sign up to Mix Trail
+                br
+                label Username
                 input(type="type" name="username" placeholder="Username" class="username")
                 br
+                label Email
                 input(type="email" name="email" placeholder="Email" class="email" )
                 br
+                label Password
                 input(type="password" name="password" placeholder="Password" class="password")
                 br
+                label Confirm Password
                 input(type="password" name="confirmPassword" placeholder="Confirm Password" class="password box-input")
                 button(type="submit" class="signup-btn") Create Account
             nav
-                p Already a member? 
-                    a(href='/login' class="login") Login 
+                p Already a member?
+                    a(href='/login' class="login") Login
