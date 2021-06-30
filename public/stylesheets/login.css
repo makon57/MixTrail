@@ -1,7 +1,8 @@
 h1 {
     text-align: center;
     padding: 10px;
-    font-family: "Open Sans", Arial, sans-serif;;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 700;
 }
 .email,
 .password {
@@ -21,9 +22,17 @@ login-form {
     text-align: center;
     padding: 10px;
 }
+
+label {
+    display: block;
+    margin: auto;
+    padding: 0px 10px 10px 10px;
+}
+
 input {
     display: block;
     margin: auto;
+    border: solid 1px grey;
 }
 .demo-btn {
     display: block;
@@ -31,8 +40,10 @@ input {
     background-color: #1A72E8;
     color: white;
     border-radius: 6px;
+    border: solid 1px white;
     width: 250px;
     height: 30px;
+    font-size: 15px;
 }
 .login-btn {
     display: block;
@@ -40,8 +51,10 @@ input {
     background-color: #EA4C89;
     color: white;
     border-radius: 6px;
+    border: solid 1px white;
     width: 250px;
     height: 30px;
+    font-size: 15px;
 }
 p {
     display: block;
@@ -71,9 +84,29 @@ p {
     justify-content: center;
     align-items: center;
 }
+
 nav {
     display: block;
 }
+
 a {
     color:blue;
+}
+
+.alert-danger {
+    border: solid 5px white;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.2);
+    font-size: 15px;
+}
+
+li {
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+li::marker {
+    visibility: hidden;
+    color: transparent;
 }
