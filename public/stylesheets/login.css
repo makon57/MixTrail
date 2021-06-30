@@ -110,3 +110,29 @@ li::marker {
     visibility: hidden;
     color: transparent;
 }
+img {
+    width: 60%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+
+.word {
+    font-weight: 700;
+    font-size: 28px;
+    margin: 20px 0;
+    font-family: "Open Sans", Arial, sans-serif;
+    /* color: #8f6978; */
+
+}
+
+.logo {
+    float:left;
+    font-family: "Dancing Script", cursive;
+    font-weight:800;
+    font-size: 30px;
+    text-decoration: none;
+}
