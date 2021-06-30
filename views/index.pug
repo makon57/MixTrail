@@ -13,13 +13,30 @@ block content
     div(class="header")
       h1 MixTrail
         div(class="search")
-          h2 Find your next trail!
-            br
-            input(type="text" id="search-bar" class="search-bar")
-  div
-    ul Trails
-      each trail in trails
-        li= trail.name
+          input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
+
+  div(class="test")
+    each trail in trails
+      div(class="trail-div")
+        a(class='btn btn-primary' href=`/trail/${trail.id}` role='button')
+          div(id=`trail-${trail.id}` class='trail-list-item')
+            p(class="name") #{trail.name}, #{trail.state}
+            img(src=`./trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
+
+  //- div
+  //-   table(class='table table-striped table-hover')
+  //-     thead(class='thead-dark')
+  //-       tr
+  //-         th(scope='col') Trail Name
+  //-         th(scope='col') State
+  //-     tbody
+  //-       each trail in trails
+  //-         tr
+  //-           td= trail.name
+  //-           td= trail.state
+  //-           td: a(class='btn btn-primary' href=`/trail/${trail.id}` role='button') Details
+
+
   //- div
   //-   ul Users
   //-     each user in users

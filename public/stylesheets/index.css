@@ -1,12 +1,8 @@
 h1 {
     color: #555555;
-    display: block;
     text-align: center;
-    padding: 10px;
-}
-
-h2 {
-    
+    margin: 20px;
+    bottom: 5px;
 }
 
 .logout-btn {
@@ -26,4 +22,49 @@ h2 {
     width: 70%;
     height: 45px;
     font-size: 22px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+}
+
+
+
+/* .trail-div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+} */
+
+/* .trail-list-item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 5vw);
+    grid-gap: 15px;
+} */
+
+.test {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 30px;
+    max-width: 700;
+}
+
+img {
+    width: 450px;
+    height: 300px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.name {
+    text-align: center;
 }
