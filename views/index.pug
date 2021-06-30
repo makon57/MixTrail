@@ -5,13 +5,31 @@ append head
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
 block content
+  header
+    div
+      nav(id="nav" class="nav-bar")
+        form(action="/" method="post" id="demo" class="demo")
+          button(type="submit" class="logout-btn") Logout
+    div(class="header")
+      h1= title
+        div(class="search")
+          h2 Find your next trail!
+            br
+            input(type="text" id="search-bar" class="search-bar")
   div
-    nav(id="nav" class="nav-bar")
-      form(action="/" method="post" id="demo" class="demo")
-        button(type="submit" class="logout-btn") Logout
-  div(class="header")
-    h1= title
-      div(class="search")
-        p Find your next trail!
-          br
-          input(type="text" id="search-bar" class="search-bar")
+    if recipes
+      .uk-grid-small.uk-grid-match.uk-child-width-1-4(uk-grid)
+        each recipe, i in recipes
+          - var cardback = 'uk-card-default'
+          if i % 3 === 0
+            - cardback = 'uk-card-primary'
+          if i % 3 === 1
+            - cardback = 'uk-card-secondary'
+          a.undecorated(href="/recipes/" + recipe.id)
+            .uk-card.uk-card-hover.uk-card-body.uk-flex.uk-flex-column.uk-flex-center(class=cardback)
+              h3.uk-card-title= recipe.title
+              p= recipe.updated
+    else
+      div(uk-alert)
+        h3 You have no recipes
+        p Why don't you go and #[a(href="/recipes/new") make one]!

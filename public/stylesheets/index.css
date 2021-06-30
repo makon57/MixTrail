@@ -5,9 +5,8 @@ h1 {
     padding: 10px;
 }
 
-div.header {
-    display: block;
-    margin: auto;
+h2 {
+    
 }
 
 .logout-btn {
@@ -20,11 +19,6 @@ div.header {
     width: 100px;
     height: 30px;
     font-size: 15px;
-}
-
-.search {
-    display: block;
-    margin: auto;
 }
 
 .search-bar {
