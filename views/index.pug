@@ -11,7 +11,7 @@ block content
         form(action="/" method="post" id="demo" class="demo")
           button(type="submit" class="logout-btn") Logout
     div(class="header")
-      h1= title
+      h1 MixTrail
         div(class="search")
           h2 Find your next trail!
             br
@@ -20,6 +20,26 @@ block content
     ul Trails
       each trail in trails
         li= trail.name
+  //- div
+  //-   ul Users
+  //-     each user in users
+  //-       li= user.username
+
+  //- div
+  //-   table
+  //-       thead
+  //-           tr
+  //-               th Name
+  //-               th Description
+  //-               th State
+  //-       tbody
+  //-           each trail in trails
+  //-               tr
+  //-                   td= trail.name
+  //-                   td= trail.description
+  //-                   td= trail.state
+
+
   //- div
   //- table(class='table table-striped table-hover')
   //-   thead(class='thead-dark')
