@@ -20,7 +20,6 @@ router.get('/', asyncHandler(async (req, res) => {
   const trails = await db.Trails.findAll()
   
 
-  
 
 }))
 
