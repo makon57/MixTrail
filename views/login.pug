@@ -6,7 +6,9 @@ append head
 block content
     div(class="container")
         aside(class="color-block")
-            p Discover the world’s best hikes!
+            p(class='logo') Mixtrail
+            p(class='word') Explore the states best hiking trails!
+            img(src='./nature-transparent-background-13.png')
         div(class="form-container")
             +validationErrorSummary(errors)
             form(action="/login" method="post" id="login" class="login-form")
