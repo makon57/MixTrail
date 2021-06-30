@@ -1,0 +1,7 @@
+extends layout.pug
+
+block content
+    div
+        p= trail.name
+        img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
+        p= trail.description 

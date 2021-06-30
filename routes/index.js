@@ -10,9 +10,9 @@ router.get('/', csrfProtection, asyncHandler(async(req, res) => {
   res.render('index', ({ trails }));
 }));
 
-router.get('/trails/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
+router.get('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
   const trailId = parseInt(req.params.id, 10);
-  const trail = await db.Trails.findByPk(trailId);
+  const trail = await db.Trail.findByPk(trailId);
   res.render('trail-detail', {
       title: "Park Detail",
       trail
