@@ -17,19 +17,53 @@ block content
             br
             input(type="text" id="search-bar" class="search-bar")
   div
-    if recipes
-      .uk-grid-small.uk-grid-match.uk-child-width-1-4(uk-grid)
-        each recipe, i in recipes
-          - var cardback = 'uk-card-default'
-          if i % 3 === 0
-            - cardback = 'uk-card-primary'
-          if i % 3 === 1
-            - cardback = 'uk-card-secondary'
-          a.undecorated(href="/recipes/" + recipe.id)
-            .uk-card.uk-card-hover.uk-card-body.uk-flex.uk-flex-column.uk-flex-center(class=cardback)
-              h3.uk-card-title= recipe.title
-              p= recipe.updated
-    else
-      div(uk-alert)
-        h3 You have no recipes
-        p Why don't you go and #[a(href="/recipes/new") make one]!
+    ul Trails
+      each trail in trails
+        li= trail.name
+  //- div
+  //- table(class='table table-striped table-hover')
+  //-   thead(class='thead-dark')
+  //-     tr
+  //-       th(scope='col') Park Name
+  //-       th(scope='col') Location
+  //-       th(scope='col') Opened
+  //-       th(scope='col') # of Attractions
+  //-       th(scope='col')
+  //-   tbody
+  //-     each trail in trails
+  //-       tr
+  //-         td= trail.name
+  //-         td= trail.state
+  //-         td= trail.description
+  //-         td: a(class='btn btn-primary' href=`/trail/${trail.id}` role='button') Details
+    //- div
+    //-   each trail in trails
+    //-     a(href=`/trails/${trail.id}` class="trailRoute")= trail.name
+        //- a(href="/my-routes/add") + Add New Route
+    //- div
+    //-   form(action="/" method="get" id="demo" class="demo")
+    //-     each trail in trails
+    //-       a(href="/trails/" + trail.id)
+    //-       h3= trail.name
+    //-       p= trail.state
+//- extends layout.pug
+
+//- block content
+//-   div(class='py-3')
+//-     a(class='btn btn-success' href='/park/add' role='button') Add Park
+//-   table(class='table table-striped table-hover')
+//-     thead(class='thead-dark')
+//-       tr
+//-         th(scope='col') Park Name
+//-         th(scope='col') Location
+//-         th(scope='col') Opened
+//-         th(scope='col') # of Attractions
+//-         th(scope='col')
+//-     tbody
+//-       each park in parks
+//-         tr
+//-           td= park.parkName
+//-           td= `${park.city}, ${park.provinceState} ${park.country}`
+//-           td= park.opened
+//-           td= (park.attractions.length || 0)
+//-           td: a(class='btn btn-primary' href=`/park/${park.id}` role='button') Details

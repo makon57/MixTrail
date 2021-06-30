@@ -11,6 +11,7 @@ const usersRouter = require('./routes/users');
 const loginRouter = require('./routes/login');
 // const { asyncHandler } = require('./utils');
 const signupRouter = require('./routes/signup');
+// const trailsRouter = require('./routes/trails');
 
 
 const app = express();
@@ -44,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter)
 app.use('/signup', signupRouter)
+// app.use('/trails', trailsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
