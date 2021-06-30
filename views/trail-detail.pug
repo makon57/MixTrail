@@ -1,8 +1,20 @@
-extends layout.pug
+extends layout
+include utils.pug
 
+append head
+    link(rel="stylesheet" href="/stylesheets/details.css")
 block content
-    div
-        p= trail.name
-        img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
-        p= trail.description 
-    
+    header 
+        div
+            nav(id="nav" class="nav-bar")
+                form(action="/" method="post" id="demo" class="demo")
+                button(type="submit" class="logout-btn") Logout
+                div(class="header")
+                    h1 MixTrail
+                div(class="search")
+                    input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
+            div
+                p(class=`name`)= trail.name
+                img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
+                p(class=`details`)= trail.description 
+                
