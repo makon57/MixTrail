@@ -44,12 +44,22 @@ h1 {
     grid-gap: 15px;
 } */
 
+.wrapper {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-gap: 10px;
+    margin: 30px;
+}
+
 .test {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     margin: 30px;
-    max-width: 700;
+}
+
+a {
+    text-decoration: none;
 }
 
 img {
