@@ -23,10 +23,10 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 
-  res.render('home.pug', {
-    listTitle: 'Latest Recipes',
+  res.render('index.pug', {
+    listTitle: 'Trails',
     error,
-    recipes,
+    trails,
   });
 
 
