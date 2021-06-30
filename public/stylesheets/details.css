@@ -1,11 +1,10 @@
 
 h1 {
     color: #555555;
-    position: relative;
     margin: 20px;
-    bottom: 5px;
-    left: 875px; 
-    
+    text-align: center;
+    text-indent: 85px;
+    font-weight: 700
 }
 
 .search-bar {
@@ -25,11 +24,12 @@ h1 {
     margin: 10px;
     border-radius: 6px;
     color: white;
-    background-color: lightblue;
+    background-color: brown;
     border: solid 1px white;
     width: 100px;
     height: 30px;
     font-size: 15px;
+    padding: 5px;
 }
 
 
@@ -43,12 +43,35 @@ img {
 
 .name {
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+
 
 }
 
 .details {
     text-align: justify;
-    border: 5px solid grey;
-    /* font-size: 40px; */
-    overflow: hidden;
+    overflow: scroll;
+    width: 700px;
+    box-sizing: 5px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    margin-top: 60px;
+}
+
+.hi {
+    margin: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+    float:right;
 }

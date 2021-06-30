@@ -7,14 +7,19 @@ block content
     header 
         div
             nav(id="nav" class="nav-bar")
-                form(action="/" method="post" id="demo" class="demo")
-                button(type="submit" class="logout-btn") Logout
+              form(action="/" method="get" id="demo" class="demo")
+                button(type="submit" class="logout-btn") Home
                 div(class="header")
                     h1 MixTrail
                 div(class="search")
                     input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
-            div
+            div(class='container')
                 p(class=`name`)= trail.name
                 img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
                 p(class=`details`)= trail.description 
+        div(class='btn-container')
+            form(action="/" method="get" id="demo" class="demo")
+                button(type="submit" class="rate-btn hi") Write a Review
+            form(action="/" method="get" id="demo" class="demo")
+                button(type="submit" class="add-btn hi") Add to TrailList
                 
