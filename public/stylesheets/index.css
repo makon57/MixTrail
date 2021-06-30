@@ -1,8 +1,9 @@
 h1 {
     color: #555555;
     text-align: center;
-    margin: 20px;
+    padding: 20px;
     bottom: 5px;
+    font-size: 50px;
 }
 
 /* .header {
@@ -31,7 +32,7 @@ h1 {
     border-radius: 6px;
     color: white;
     background-color: lightblue;
-    border: solid 1px white;
+    border: solid 1px transparent;
     width: 100px;
     height: 30px;
     font-size: 15px;
@@ -45,6 +46,10 @@ h1 {
     text-align: center;
     position: relative;
     top: 10px;
+}
+
+header > div {
+    background-color: rgb(187, 199, 187);
 }
 
 
