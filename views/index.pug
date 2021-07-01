@@ -12,8 +12,14 @@ block content
           img(src="1889970.png" class="mixtrail-logo")
         div(class="nav-div")
           input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
-          form(action="/" method="post" id="demo" class="demo")
-            button(type="submit" class="logout-btn") Logout
+          if (user)
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="logout-btn") Logout
+          else
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="logout-btn") Login
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="logout-btn") Sign Up
     div
       h1 MixTrail
   div(class="wrapper")
