@@ -1,0 +1,77 @@
+
+h1 {
+    color: #555555;
+    margin: 20px;
+    text-align: center;
+    text-indent: 85px;
+    font-weight: 700
+}
+
+.search-bar {
+    border-radius: 30px;
+    width: 70%;
+    height: 45px;
+    font-size: 22px;
+    text-align: center;
+    position: relative;
+    top: 5px;
+    left: 285px
+}
+
+
+.logout-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
+img {
+    width: 700x;
+    height: 600px;
+    display: block;
+    margin: auto;
+    border-radius: 6px;
+}
+
+.name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+
+
+}
+
+.details {
+    text-align: justify;
+    overflow: scroll;
+    width: 700px;
+    box-sizing: 5px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    margin-top: 60px;
+}
+
+.hi {
+    margin: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+    float:right;
+}
