@@ -17,17 +17,21 @@ block content
               button(type="submit" class="logout-btn") Logout
           else
             form(action="/" method="post" id="demo" class="demo")
-              button(type="submit" class="logout-btn") Login
+              button(type="submit" class="login-btn") Login
             form(action="/" method="post" id="demo" class="demo")
-              button(type="submit" class="logout-btn") Sign Up
+              button(type="submit" class="sign-btn") Sign Up
     div
       h1 MixTrail
   div(class="wrapper")
     div(class="sidebar-container")
       div(class="sidebar")
         div(class="sidebar-content")
-        p= Hello
-        a(href='/login') Trail List
+          h3(class="trail-list") Trail List
+            ul
+              li
+                a(href='/login') Visited
+              li
+                a(href='/login') Want To Visit
     div(class="trail-container")
       each trail in trails
         div(class="trail-div")

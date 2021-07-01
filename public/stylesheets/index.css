@@ -32,8 +32,31 @@ h1 {
     margin: 10px;
     border-radius: 6px;
     color: white;
+    background-color: rgb(86, 108, 116);
+    border: solid 1px rgb(86, 108, 116);
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.login-btn {
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
     background-color: lightblue;
     border: solid 1px lightblue;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+}
+
+
+.sign-btn {
+    margin: 10px 10px 10px 0px;
+    border-radius: 6px;
+    color: white;
+    background-color: #EA4C89;
+    border: solid 1px #EA4C89;
     width: 100px;
     height: 30px;
     font-size: 18px;
@@ -51,12 +74,16 @@ h1 {
     border: solid 1px rgb(143, 143, 143);
 }
 
+/* input#search-bar.search-bar::selection {
+    background-color: white;
+    color: thistle;
+} */
+
+
 header > div {
     background-color: rgb(187, 199, 187);
     /* background-color: #4f7d58; */
 }
-
-
 
 .trail-div {
     padding: 5px;
@@ -95,12 +122,6 @@ header > div {
 
 }
 
-/* .trail-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin: 30px;
-} */
 
 .trail-list-item {
     max-width: 225px;
