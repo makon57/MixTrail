@@ -23,15 +23,15 @@ const getUserFromSession = async req => {
 
 router.get('/', csrfProtection, asyncHandler(async(req, res) => {
   const trails = await db.Trail.findAll();
-  const user = await getUserFromSession(req)
+  const user = await getUserFromSession(req);
   res.render('index', ({ trails, user }));
 }));
 
 
-router.get('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
+router.get('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
   const trailId = parseInt(req.params.id, 10);
   const trail = await db.Trail.findByPk(trailId);
-  const reviews = await db.Review.findAll({ where: trailId, include: "User" })
+  const reviews = await db.Review.findAll({ where: { trailId }, include: "User" })
   res.render('trail-detail', {
       title: "Park Detail",
       trail,
@@ -40,11 +40,12 @@ router.get('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next
 }));
 
 
-router.post('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
+router.post('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
   const { text } = req.body;
-  const newReview = await Review.build({ text, userId: req.user.id, trailId:req.trail.id, createdAt: req.review.createdAt });
-  await newReview.save();
-  res.redirect('/trail/:id(\\d+)');
+  const trailId = req.params.id;
+  const user = req.session.auth.userId
+  await db.Review.create({ text, userId: user, trailId, rating: 4, createdAt: new Date() });
+  res.redirect(`/trail/${trailId}`);
 }));
 
 // router.put('/:id(\\d+)', validateTweet, handleValidationErrors,asyncHandler(async(req, res, next) => {
