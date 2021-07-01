@@ -73,17 +73,21 @@ router.put(
   })
 );
 
-// router.delete('/:id(\\d+)', asyncHandler(async(req, res, next) => {
-//   const tweetId = req.params.id;
-//   const tweet = await Tweet.findByPk(tweetId);
+router.delete('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
+  const trailId = req.params.id;
+  const review = await db.Review.findAll({ where: { trailId }, include: "User" })
 
-//   if (tweet) {
-//       await tweet.destroy();
-//       res.status(201).end();
-//   } else {
-//       next(tweetNotFound(tweetId));
-//   }
-// }));
+  await review.destroy();
+}));
+
+// router.delete('/trail/:id', function (req, res) {
+//   console.log("DELETE review")
+//   Review.findByIdAndRemove(req.params.id).then((review) => {
+//     res.redirect('/');
+//   }).catch((err) => {
+//     console.log(err.message);
+//   })
+// })
 
 
 router.post('/', (req, res) => {
