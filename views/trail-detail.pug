@@ -65,12 +65,13 @@ block content
       each review in reviews
         div(class="review")
           p(class="review-username")= `User: ${review.User.username}`
-          p(class="review-text")= `${review.text}`
+          div
+            p(id=`text-${review.id}` class="review-text")= `${review.text}`
           p(class="review-date")= `Reviewed at: ${review.createdAt}`
-          button(type="submit" class="edit-btn hi") Edit Review
-          p
-            form(action=`/trail/${trail.id}` method="delete" class="")
-              button(type="submit" class="delete-btn hi") Delete Review
+          if (review.User.id === user.id)
+            button(type="submit" id=`${review.id}` class="edit-btn hi") Edit Review
+            form(action=`/trail/${trail.id}/delete` method="post" class="")
+                button(type="submit" class="delete-btn hi") Delete Review
 
           //- input(type="hidden" class="edit-input")
           //- if (review.User.id === review.userId)

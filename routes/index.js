@@ -73,11 +73,14 @@ router.put(
   })
 );
 
-router.delete('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
+router.post('/trail/:id(\\d+)/delete', asyncHandler(async(req, res, next) => {
+  console.log("akjsbvbalkbvakaubvk")
   const trailId = req.params.id;
-  const review = await db.Review.findAll({ where: { trailId }, include: "User" })
-
+  const userId = req.session.auth.userId
+  const review = await db.Review.findOne({ where: { trailId, userId } })
+  console.log(review);
   await review.destroy();
+  res.redirect(`/trail/${trailId}`);
 }));
 
 // router.delete('/trail/:id', function (req, res) {
