@@ -4,7 +4,7 @@
 //- append head
 //-     link(rel="stylesheet" href="/stylesheets/details.css")
 //- block content
-//-     header 
+//-     header
 //-         div
 //-             nav(id="nav" class="nav-bar")
 //-               form(action="/" method="get" id="demo" class="demo")
@@ -16,7 +16,7 @@
 //-             div(class='container')
 //-                 p(class=`name`)= trail.name
 //-                 img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
-//-                 p(class=`details`)= trail.description 
+//-                 p(class=`details`)= trail.description
 //-         div(class='btn-container')
 //-             form(action="/" method="get" id="demo" class="demo")
 //-                 button(type="submit" class="rate-btn hi") Write a Review
@@ -41,21 +41,29 @@ block content
               button(type="submit" class="logout-btn home") Home
             form(action="/" method="post" id="demo" class="demo")
               button(type="submit" class="logout-btn logout") Logout
-              
+
           else
             form(action="/" method="post" id="demo" class="demo")
               button(type="submit" class="login-btn") Login
             form(action="/" method="post" id="demo" class="demo")
               button(type="submit" class="sign-btn") Sign Up
     div
-      h1 MixTrail  
+      h1 MixTrail
   div(class='container')
     div(class='top-container')
                 p(class=`name`)= trail.name
                 img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
-                p(class=`details`)= trail.description 
+                p(class=`details`)= trail.description
     div(class='btn-container')
             form(action="/trailList" method="post" id="demo" class="demo")
                 button(type="submit" class="add-btn hi") Add to TrailList
-            form(action=`/trail/${trail.id}/review` method="post" id="demo" class="demo")
+            form(action=`/trail/${trail.id}` method="post" id="demo" class="demo")
                 button(type="submit" class="rate-btn hi") Write a Review
+    div(class="list-reviews")
+      each review in reviews
+        div
+          p= review.text
+          p= review.createdAt
+    //- div(class="review-container")
+    //-   form(action="/" method="post" class="")
+    //-     textarea(name="text")
