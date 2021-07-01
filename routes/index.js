@@ -89,6 +89,7 @@ router.put(
       console.log(req.body.body);
       await review.update({ text: req.body.body });
       res.json(review)
+      // res.redirect(`/trail/${review.trailId}`)
     }
   })
 );
