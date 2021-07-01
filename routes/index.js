@@ -39,7 +39,6 @@ router.get('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
   });
 }));
 
-
 router.post('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
   const { text } = req.body;
   const trailId = req.params.id;
@@ -48,17 +47,31 @@ router.post('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
   res.redirect(`/trail/${trailId}`);
 }));
 
-// router.put('/:id(\\d+)', validateTweet, handleValidationErrors,asyncHandler(async(req, res, next) => {
-//   const tweetId = req.params.id;
-//   const tweet = await Tweet.findByPk(tweetId);
-
-//   if (tweet) {
-//       await tweet.update({ message: req.body.message });
-//       res.json({ tweet });
-//   } else {
-//       next(tweetNotFound(tweetId));
+// router.put('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
+//   const trailId = req.params.id;
+//   const review = await db.Review.findByPk(trailId);
+//   const user = req.session.auth.userId
+//   if (review) {
+//       await review.update({ text: req.body.text });
 //   }
 // }));
+
+router.put(
+  "/trail/:id(\\d+)",
+  asyncHandler(async (req, res, next) => {
+    const review = await Review.findOne({ where: { id: req.params.id } });
+
+    if (req.user.id !== review.userId) {
+      const err = new Error("Unauthorized");
+      err.status = 401;
+      err.message = "You are not authorized to edit this tweet.";
+      err.title = "Unauthorized";
+      throw err;
+    } else if (review) {
+      await review.update({ text: req.body.text });
+    }
+  })
+);
 
 // router.delete('/:id(\\d+)', asyncHandler(async(req, res, next) => {
 //   const tweetId = req.params.id;

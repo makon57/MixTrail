@@ -59,7 +59,7 @@ block content
                 button(type="submit" class="add-btn hi") Add to TrailList
     div(class="review-container")
       form(action=`/trail/${trail.id}` method="post" class="")
-        textarea(name="text" placeholder="Write a review!")
+        textarea(name="text" placeholder="Write a review!" class="review-input")
         button(type="submit" class="rate-btn hi") Submit
     div(class="list-reviews")
       each review in reviews
@@ -67,3 +67,9 @@ block content
           p(class="review-username")= `User: ${review.User.username}`
           p(class="review-text")= `${review.text}`
           p(class="review-date")= `Reviewed at: ${review.createdAt}`
+          button(type="submit" class="edit-btn") Edit Review
+          //- input(type="hidden" class="edit-input")
+          //- if (review.User.id === review.userId)
+
+            //- form(action=`/trail/${trail.id}` method="put" class="")
+              //- input()
