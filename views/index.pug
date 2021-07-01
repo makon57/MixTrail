@@ -8,8 +8,8 @@ block content
   header
     div
       nav(id="nav" class="nav-bar")
-        h1
-        h1
+        div
+          img(src="1889970.png" class="mixtrail-logo")
         div(class="nav-div")
           input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
           form(action="/" method="post" id="demo" class="demo")
@@ -21,7 +21,7 @@ block content
       div(class="sidebar")
         div(class="sidebar-content")
         p= Hello
-        a(href='/login') Login
+        a(href='/login') Trail List
     div(class="trail-container")
       each trail in trails
         div(class="trail-div")
