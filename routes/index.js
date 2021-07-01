@@ -31,7 +31,7 @@ router.get('/', csrfProtection, asyncHandler(async(req, res) => {
 router.get('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
   const trailId = parseInt(req.params.id, 10);
   const trail = await db.Trail.findByPk(trailId);
-  const reviews = await db.Reviews.findAll({ where: trailId})
+  const reviews = await db.Review.findAll({ where: trailId, include: "User" })
   res.render('trail-detail', {
       title: "Park Detail",
       trail,
@@ -40,11 +40,11 @@ router.get('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next
 }));
 
 
-
 router.post('/trail/:id(\\d+)', csrfProtection, asyncHandler(async(req, res, next) => {
   const { text } = req.body;
-  const review = await Review.create({ text, userId: req.user.id, trailId:req.trail.id, createdAt: req.review.createdAt });
-  res.render('trail-detail', ({ review }));
+  const newReview = await Review.build({ text, userId: req.user.id, trailId:req.trail.id, createdAt: req.review.createdAt });
+  await newReview.save();
+  res.redirect('/trail/:id(\\d+)');
 }));
 
 // router.put('/:id(\\d+)', validateTweet, handleValidationErrors,asyncHandler(async(req, res, next) => {

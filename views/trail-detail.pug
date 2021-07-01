@@ -57,13 +57,13 @@ block content
     div(class='btn-container')
             form(action="/trailList" method="post" id="demo" class="demo")
                 button(type="submit" class="add-btn hi") Add to TrailList
-            form(action=`/trail/${trail.id}` method="post" id="demo" class="demo")
-                button(type="submit" class="rate-btn hi") Write a Review
+    div(class="review-container")
+      form(action=`/trail/${trail.id}` method="post" class="")
+        textarea(name="text" placeholder="Write a review!")
+        button(type="submit" class="rate-btn hi") Submit
     div(class="list-reviews")
       each review in reviews
-        div
-          p= review.text
-          p= review.createdAt
-    //- div(class="review-container")
-    //-   form(action="/" method="post" class="")
-    //-     textarea(name="text")
+        div(class="review")
+          p(class="review-username")= `User: ${review.User.username}`
+          p(class="review-text")= `${review.text}`
+          p(class="review-date")= `Reviewed at: ${review.createdAt}`

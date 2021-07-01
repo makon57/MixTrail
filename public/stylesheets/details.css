@@ -1,4 +1,4 @@
-/* 
+/*
 h1 {
     color: #555555;
     margin: 20px;
@@ -186,7 +186,7 @@ img {
     font-size: 15px;
     padding: 5px;
     width: fit-content;
-} 
+}
 
 .btn-container {
     display: flex;
@@ -196,5 +196,30 @@ img {
 .container {
     box-sizing: border-box;
     border: 5px black;
-    grid
+    /* grid */
+}
+
+.review-container {
+    text-align: justify;
+    overflow: scroll;
+    width: 700px;
+    box-sizing: 5px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.review {
+    text-align: center;
+    border: solid 1px black;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    border-radius: 5px;
 }
