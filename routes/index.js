@@ -56,19 +56,39 @@ router.post('/trail/:id(\\d+)', asyncHandler(async(req, res, next) => {
 //   }
 // }));
 
-router.put(
-  "/trail/:id(\\d+)",
-  asyncHandler(async (req, res, next) => {
-    const review = await Review.findOne({ where: { id: req.params.id } });
+// router.put(
+//   "/trail/:id(\\d+)",
+//   asyncHandler(async (req, res, next) => {
+//     const review = await db.Review.findOne({ where: { id: trailId, userId: req.session.auth.userId } });
+//     console.log(review);
+//     if (req.user.id !== review.userId) {
+//       const err = new Error("Unauthorized");
+//       err.status = 401;
+//       err.message = "You are not authorized to edit this tweet.";
+//       err.title = "Unauthorized";
+//       throw err;
+//     } else if (review) {
+//       await review.update({ text: req.body.text });
+//     }
+//   })
+// );
 
-    if (req.user.id !== review.userId) {
+router.put(
+  "/review/:id(\\d+)",
+  asyncHandler(async (req, res, next) => {
+    const id = req.params.id;
+    const review = await db.Review.findByPk(id);
+    console.log(review);
+    if (req.session.auth.userId !== review.userId) {
       const err = new Error("Unauthorized");
       err.status = 401;
       err.message = "You are not authorized to edit this tweet.";
       err.title = "Unauthorized";
       throw err;
     } else if (review) {
-      await review.update({ text: req.body.text });
+      console.log(req.body.body);
+      await review.update({ text: req.body.body });
+      res.json(review)
     }
   })
 );
