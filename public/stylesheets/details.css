@@ -174,7 +174,7 @@ img {
     border: solid 1px black;
     margin-left: 30%;
     margin-right: 30%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 textarea {
@@ -185,4 +185,8 @@ textarea {
 
 .hidden {
     visibility: hidden;
+}
+
+.trail-list > a {
+    padding: 5px;
 }

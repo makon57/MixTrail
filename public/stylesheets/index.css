@@ -7,10 +7,6 @@ h1 {
     /* font-family:  */
 }
 
-/* .header {
-    position: fixed;
-    width: 100%;
-} */
 
 .nav-bar {
     display: flex;
@@ -74,10 +70,7 @@ h1 {
     border: solid 1px rgb(143, 143, 143);
 }
 
-/* input#search-bar.search-bar::selection {
-    background-color: white;
-    color: thistle;
-} */
+
 
 
 header > div {
@@ -102,12 +95,15 @@ header > div {
     background-color: #d6d8d9;
     border-radius: 3px;
     margin: 0 32px 32px 0;
-    padding: 0 20px 32px 20px;
+    padding: 20px 20px 32px 20px;
     height: 60%;
     max-width:  180px;
     width: 20%;
     flex-basis: 220px;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .sidebar-container {
@@ -169,4 +165,11 @@ img {
     height: 50px;
     border-radius: 25px;
     padding: 10px;
+}
+
+.sidebar-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: transparent;
 }
