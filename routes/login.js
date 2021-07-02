@@ -41,10 +41,9 @@ router.post('/', csrfProtection, loginValidators, asyncHandler(async (req,res,ne
     if (user !== null ) {
     //  const userPassword = await db.User.findOne({where: {password}}) ;
         if(userPassword === password) {
-        loginUser(req, res, user);
-       res.redirect('/');
+          loginUser(req, res, user);
+          return res.redirect('/');
         }
-
     }
     errors.push('Login failed')
   } else {
