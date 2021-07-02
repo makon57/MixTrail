@@ -53,24 +53,25 @@ block content
                 p(class=`name`)= trail.name
                 img(src=`../trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
                 p(class=`details`)= trail.description
-    div(class='btn-container')
-            form(action="/trailList" method="post" id="demo" class="demo")
-                button(type="submit" class="add-btn hi") Add to TrailList
-    div(class="review-container")
-      form(action=`/trail/${trail.id}` method="post" class="")
-        textarea(name="text" placeholder="Write a review!" class="review-input")
-        button(type="submit" class="rate-btn hi") Submit
-    div(class="list-reviews")
-      each review in reviews
-        div(class="review")
-          p(class="review-username")= `User: ${review.User.username}`
-          div
-            p(id=`text-${review.id}` class="review-text")= `${review.text}`
-          p(class="review-date")= `Reviewed at: ${review.createdAt}`
-          if (review.User.id === user.id)
-            button(type="submit" id=`${review.id}` class="edit-btn hi") Edit Review
-            form(action=`/trail/${trail.id}/delete` method="post" class="")
-                button(type="submit" class="delete-btn hi") Delete Review
+    if (user)
+      div(class='btn-container')
+              form(action="/trailList" method="post" id="demo" class="demo")
+                  button(type="submit" class="add-btn hi") Add to TrailList
+      div(class="review-container")
+        form(action=`/trail/${trail.id}` method="post" class="")
+          textarea(name="text" placeholder="Write a review!" class="review-input")
+          button(type="submit" class="rate-btn hi") Submit
+      div(class="list-reviews")
+        each review in reviews
+          div(class="review")
+            p(class="review-username")= `User: ${review.User.username}`
+            div
+              p(id=`text-${review.id}` class="review-text")= `${review.text}`
+            p(class="review-date")= `Reviewed at: ${review.createdAt}`
+            if (review.User.id === user.id)
+              button(type="submit" id=`${review.id}` class="edit-btn hi") Edit Review
+              form(action=`/trail/${trail.id}/delete` method="post" class="")
+                  button(type="submit" class="delete-btn hi") Delete Review
 
           //- input(type="hidden" class="edit-input")
           //- if (review.User.id === review.userId)

@@ -247,3 +247,7 @@ textarea {
     height: 100px;
     border-radius: 5px;
 }
+
+.hidden {
+    visibility: hidden;
+}

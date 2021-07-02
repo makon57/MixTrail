@@ -1,3 +1,4 @@
+
 window.addEventListener("load", (event)=>{
     console.log("hello from javascript!")
 
@@ -37,8 +38,23 @@ window.addEventListener("load", (event)=>{
 
     }
 
+    const reviewContainer = document.querySelector('.review-container')
+    const rateBtn = document.querySelector('.rate-btn')
 
+    rateBtn.addEventListener('click', e => {
+        // e.preventDefault()
+        reviewContainer.classList.add(localStorage.classname)
+        localStorage.classname = 'hidden'
+    })
+  
 });
+// console.log(review)
+// if (review) {
+// reviewContainer.classList.add('hidden')
+// } else {
+// reviewContainer.classList.remove('hidden')
+// }
+// let review = false
 
 // Listen to the text inside of areaThing, ONCE it exists
 // Set your text in your put request to the new thing area thINg
