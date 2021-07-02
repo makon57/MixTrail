@@ -1,6 +1,13 @@
-
 window.addEventListener("load", (event)=>{
     console.log("hello from javascript!")
+    
+    const deleteBtn = document.querySelector('.delete-btn');
+    if (deleteBtn) {
+        document.querySelector('.review-container').style.visibility = "hidden";
+        deleteBtn.addEventListener('click', (event) => {
+            document.querySelector('.review-container').style.visibility = "visible";
+        });
+    }
 
     const editBtn = document.querySelector('.edit-btn');
     if (editBtn) {
@@ -9,9 +16,7 @@ window.addEventListener("load", (event)=>{
             const id = event.target.id
             let area = document.querySelector(`#text-${id}`);
             area.parentElement.innerHTML = `<textarea id="review-text">${area.innerText}</textarea> <button id="save-btn">Save</button>`;
-
             let body;
-
             const saveBtn = document.querySelector('#save-btn');
             console.log(saveBtn);
             if (saveBtn) {
@@ -25,37 +30,13 @@ window.addEventListener("load", (event)=>{
                     window.location.href = `/trail/${update.trailId}`
                 });
             }
-
             const updateValue = async (event) => {
                 body = event.target.value;
                 console.log(body);
             }
-
             let areaThing = document.querySelector(`#review-text`);
             areaThing.addEventListener('change', updateValue)
             console.log(areaThing);
         })
-
     }
-
-    const reviewContainer = document.querySelector('.review-container')
-    const rateBtn = document.querySelector('.rate-btn')
-
-    rateBtn.addEventListener('click', e => {
-        // e.preventDefault()
-        reviewContainer.classList.add(localStorage.classname)
-        localStorage.classname = 'hidden'
-    })
-  
 });
-// console.log(review)
-// if (review) {
-// reviewContainer.classList.add('hidden')
-// } else {
-// reviewContainer.classList.remove('hidden')
-// }
-// let review = false
-
-// Listen to the text inside of areaThing, ONCE it exists
-// Set your text in your put request to the new thing area thINg
-//
