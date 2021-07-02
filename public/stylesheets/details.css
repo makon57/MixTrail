@@ -65,15 +65,17 @@ img {
 }
 
 */
-h1 {
+
+.h1 {
     color: #0f211a;
     text-align: center;
     padding: 20px;
     bottom: 5px;
     font-size: 50px;
-    font-family: ;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
 }
-
 /* .header {
     position: fixed;
     width: 100%;
@@ -102,8 +104,29 @@ h1 {
     width: 100px;
     height: 30px;
     font-size: 18px;
+    background-color:blue;
+}
+.login-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color:blue;
 }
 
+.sign-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color:lightsalmon;
+}
 
 
 .search-bar {
@@ -141,10 +164,11 @@ header > div {
 
 img {
     width: 700px;
-    height: 600px;
+    max-height: 600px;
     display: block;
     margin: auto;
     border-radius: 6px;
+    object-fit: contain;
 }
 
 .name {
@@ -158,8 +182,8 @@ img {
     height: 50px;
     border-radius: 25px;
     padding: 10px;
+    object-fit: cover;
 }
-
 .name {
     text-align: center;
     font-size: 30px;
