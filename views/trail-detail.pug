@@ -12,7 +12,7 @@ block content
           img(src="/1889970.png" class="mixtrail-logo")
         div(class="nav-div")
           input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
-          if (!user)
+          if (user)
             form(action="/" method="get" id="demo" class="demo")
               button(type="submit" class="logout-btn home") Home
             form(action="/" method="post" id="demo" class="demo")
@@ -23,7 +23,7 @@ block content
             form(action="/" method="post" id="demo" class="demo")
               button(type="submit" class="sign-btn") Sign Up
     div
-      h1 MixTrail
+      a(href='/' class='h1') MixTrail
   div(class='container')
     div(class='top-container')
                 p(class=`name`)= trail.name
