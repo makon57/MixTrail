@@ -1,5 +1,4 @@
 
-
 .h1 {
     color: #0f211a;
     text-align: center;
@@ -10,10 +9,7 @@
     display: flex;
     justify-content: center;
 }
-/* .header {
-    position: fixed;
-    width: 100%;
-} */
+
 
 .nav-bar {
     display: flex;
