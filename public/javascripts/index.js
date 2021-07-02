@@ -1,11 +1,13 @@
 window.addEventListener("load", (event)=>{
     console.log("hello from javascript!")
-    
+
     const deleteBtn = document.querySelector('.delete-btn');
     if (deleteBtn) {
         document.querySelector('.review-container').style.visibility = "hidden";
+        document.querySelector('.review-container').style.padding = "0px";
         deleteBtn.addEventListener('click', (event) => {
             document.querySelector('.review-container').style.visibility = "visible";
+
         });
     }
 

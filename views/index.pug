@@ -35,7 +35,7 @@ block content
     div(class="trail-container")
       each trail in trails
         div(class="trail-div")
-          a(class='btn btn-primary' href=`/trail/${trail.id}` role='button')
+          a(class='btn btn-primary' href=`/trail/${trail.id}`)
             div(id=`trail-${trail.id}` class='trail-list-item')
               p(class="name") #{trail.name}
               p(class="state") #{trail.state}
