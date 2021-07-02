@@ -35,6 +35,7 @@ block content
     div(class="review-container")
       form(action=`/trail/${trail.id}` method="post" class="")
         textarea(name="text" placeholder="Write a review!" class="review-input")
+        br
         button(type="submit" class="submit-btn hi") Submit
     div(class="list-reviews")
       each review in reviews
