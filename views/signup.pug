@@ -1,0 +1,35 @@
+extends layout
+include utils.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/signup.css")
+block content
+    div(class="container")
+        aside(class="color-block")
+            a(href='/')
+             p(class='logo') Mixtrail
+            p(class='word') Explore the states best hiking trails!
+            img(src='./nature-transparent-background-24.png')
+        div(class="form-container")
+            h1 Sign up to Mix Trail
+            br
+            +validationErrorSummary(errors)
+            form(action="/signup" method="post" id="signup" class="signup-form")
+                input(type="hidden" name="_csrf" value=csrfToken)
+                br
+
+                input(type="type" name="username" placeholder="Username" class="username")
+                br
+
+                input(type="email" name="email" placeholder="Email" class="email" )
+                br
+
+                input(type="password" name="password" placeholder="Password" class="password")
+                br
+                
+                input(type="password" name="confirmPassword" placeholder="Confirm Password" class="password box-input")
+                button(type="submit" class="signup-btn") Create Account
+            nav
+                p Already a member? 
+                    a(href='/login' class="login") Login
+        

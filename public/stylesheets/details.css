@@ -1,0 +1,238 @@
+
+.h1 {
+    color: #0f211a;
+    text-align: center;
+    padding: 20px;
+    bottom: 5px;
+    font-size: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-div {
+    display: flex;
+}
+
+.search {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+}
+
+.logout-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color:blue;
+}
+.login-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color:blue;
+}
+
+.sign-btn {
+    float: right;
+    margin: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    background-color:lightsalmon;
+}
+
+
+.search-bar {
+    border-radius: 30px;
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    background-color: #eee;
+    border: solid 1px rgb(143, 143, 143);
+}
+
+/* input#search-bar.search-bar::selection {
+    background-color: white;
+    color: thistle;
+} */
+.home {
+    background-color: lightskyblue;
+    color: white;
+    border: solid lightskyblue;
+    width: 105px;
+
+}
+
+.logout {
+    background-color: #EA4C89;
+    border: solid 1px #EA4C89;
+}
+header > div {
+    /* background-color: rgb(187, 199, 187); */
+    background-color:#FFFACD;
+}
+
+img {
+    width: 700px;
+    max-height: 600px;
+    display: block;
+    margin: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.name {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.mixtrail-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 10px;
+    object-fit: cover;
+}
+.name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 30px;
+}
+
+.details {
+    text-align: justify;
+    overflow: scroll;
+    width: 700px;
+    box-sizing: 5px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+.hi {
+    margin: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.delete-btn {
+    background-color: rgb(83, 83, 83);
+    visibility: visible;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    box-sizing: border-box;
+    border: 5px black;
+    /* grid */
+}
+
+.review-container {
+    text-align: justify;
+    overflow: scroll;
+    width: 700px;
+    box-sizing: 5px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.review {
+    text-align: center;
+    border: solid 1px black;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 1%;
+    border-radius: 6px;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+    border-radius: 6px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.trail-list > a {
+    padding: 5px;
+}
+
+.submit-btn {
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.review-date {
+    font-size: 10px;
+}
+
+.review-username {
+    font-size: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    font-weight: 700;
+}
+
+#review-text {
+    margin: 10px;
+}
+
+#save-btn {
+    margin: 5px;
+    border-radius: 6px;
+    color: white;
+    background-color: lightskyblue;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.edit-btn {
+    visibility: visible;
+}

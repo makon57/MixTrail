@@ -1,0 +1,33 @@
+extends layout
+include utils.pug
+
+append head
+    link(rel="stylesheet" href="/stylesheets/login.css")
+block content
+        div(class="container")
+
+            aside(class="color-block")
+                a(href='/')
+                    p(class='logo') Mixtrail
+                p(class='word') Explore the states best hiking trails!
+                img(src='./globe-1339833_1280.png')
+            div(class="form-container")
+                h1 Sign into MixTrail
+                br
+                +validationErrorSummary(errors)
+                form(action="/login" method="post" id="login" class="login-form")
+                    input(type="hidden" name="_csrf" value=csrfToken)
+                    br
+
+                    input(type="email" name="email" placeholder="Email" class="email" )
+                    br
+                    
+                    input(type="password" name="password" placeholder="Password" class="password")
+                    br
+                    button(type="submit" class="login-btn") Login
+                form(action="/login/demo" method="post" id="demo" class="demo-form")
+                    input(type="hidden" name="_csrf" value=csrfToken)
+                    button(type="submit" class="demo-btn") Demo Login
+                nav
+                    p Not a member? 
+                        a(href='/signup' class="sign") Sign Up

@@ -1,11 +1,46 @@
 extends layout
-
 append head
   //- add page specific styles by appending to the head
   link(rel="stylesheet" href="/stylesheets/index.css")
   //- add page specific js
   script(src="/javascripts/index.js" type="module" defer)
-
 block content
-  h1= title
-  p Welcome to your Project Skeleton
+  header
+    div
+      nav(id="nav" class="nav-bar")
+        div
+          img(src="1889970.png" class="mixtrail-logo")
+        div(class="nav-div")
+          input(type="text" id="search-bar" class="search-bar" placeholder="Find your next trail!")
+          if (user)
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="logout-btn") Logout
+          else
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="login-btn") Login
+            form(action="/" method="post" id="demo" class="demo")
+              button(type="submit" class="sign-btn") Sign Up
+    div
+      h1 MixTrail
+  div(class="wrapper")
+    div(class="sidebar-container")
+      div(class="sidebar")
+        div(class="sidebar-content")
+          h3(class="trail-list") Trail List
+            a(href='/login') Visited
+            a(href='/login') Want To Visit
+    div(class="trail-container")
+      each trail in trails
+        div(class="trail-div")
+          if (user)
+            a(class='btn btn-primary' href=`/trail/${trail.id}`)
+              div(id=`trail-${trail.id}` class='trail-list-item')
+                p(class="name") #{trail.name}
+                p(class="state") #{trail.state}
+                img(src=`./trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
+          else
+            a(href=`/login`)
+              div(id=`trail-${trail.id}` class='trail-list-item')
+                  p(class="name") #{trail.name}
+                  p(class="state") #{trail.state}
+                  img(src=`./trails/trail-${trail.id}.jpg` alt=`${trail.name}` class=`trail-image-${trail.id}`)
