@@ -15,10 +15,16 @@ window.addEventListener("load", (event)=>{
     if (editBtn) {
         editBtn.addEventListener('click', (event) => {
             event.preventDefault();
+
+            document.querySelector('.delete-btn').style.visibility = "hidden";
+            document.querySelector('.edit-btn').style.visibility = "hidden";
+
             const id = event.target.id
             let area = document.querySelector(`#text-${id}`);
-            area.parentElement.innerHTML = `<textarea id="review-text">${area.innerText}</textarea> <button id="save-btn">Save</button>`;
+            area.parentElement.innerHTML = `<textarea id="review-text">${area.innerText}</textarea> <br> <button id="save-btn">Save</button>`;
+
             let body;
+
             const saveBtn = document.querySelector('#save-btn');
             console.log(saveBtn);
             if (saveBtn) {
@@ -30,9 +36,10 @@ window.addEventListener("load", (event)=>{
                     });
                     const update = await review.json();
                     window.location.href = `/trail/${update.trailId}`
+
                 });
             }
-            const updateValue = async (event) => {
+            const updateValue= async (event) => {
                 body = event.target.value;
                 console.log(body);
             }

@@ -36,13 +36,13 @@ block content
       form(action=`/trail/${trail.id}` method="post" class="")
         textarea(name="text" placeholder="Write a review!" class="review-input")
         br
-        button(type="submit" class="submit-btn hi") Submit
+        button(type="submit" class="submit-btn") Submit
     div(class="list-reviews")
       each review in reviews
         div(class="review")
-          p(class="review-username")= `User: ${review.User.username}`
           div
             p(id=`text-${review.id}` class="review-text")= `${review.text}`
+          p(class="review-username")= `User: ${review.User.username}`
           p(class="review-date")= `Reviewed at: ${review.createdAt}`
           if (review.User.id === user.id)
             button(type="submit" id=`${review.id}` class="edit-btn hi") Edit Review

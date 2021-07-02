@@ -118,7 +118,7 @@ img {
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    padding: 15px;
+    padding: 30px;
 }
 
 .details {
@@ -140,6 +140,11 @@ img {
     font-size: 15px;
     padding: 5px;
     width: fit-content;
+}
+
+.delete-btn {
+    background-color: rgb(83, 83, 83);
+    visibility: visible;
 }
 
 .btn-container {
@@ -188,7 +193,46 @@ textarea {
     padding: 5px;
 }
 
-button.submit-btn {
+.submit-btn {
     display: block;
     margin: auto;
+    border-radius: 10px;
+    color: white;
+    background-color: brown;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.review-date {
+    font-size: 10px;
+}
+
+.review-username {
+    font-size: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    font-weight: 700;
+}
+
+#review-text {
+    margin: 10px;
+}
+
+#save-btn {
+    margin: 5px;
+    border-radius: 6px;
+    color: white;
+    background-color: lightskyblue;
+    border: solid 1px white;
+    font-size: 15px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.edit-btn {
+    visibility: visible;
 }
