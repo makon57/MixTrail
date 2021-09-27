@@ -7,7 +7,7 @@ append head
 block content
   header
     div
-      nav(id="nav" class="nav-bar")
+      nav(id="nav" class="nav-bar")   
         form(action="/" method="post" id="demo" class="demo")
           button(type="submit" class="logout-btn") Logout
     div(class="header")
@@ -30,7 +30,7 @@ block content
               h3.uk-card-title= recipe.title
               p= recipe.updated
     else
-    
+
       div(uk-alert)
         h3 You have no recipes
         p Why don't you go and #[a(href="/recipes/new") make one]!
